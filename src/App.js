@@ -8,30 +8,28 @@ import Card from './Components/Card'
 import React, { useState } from 'react';
 import boxes from './boxes';
 import Box from './Components/Box'
+import Joke from './Components/Jokes';
+import jokesData from './Components/JokesData';
 
 
 
 function App() {
 
-  const [squares, setSquares] = useState(boxes);
+  const [isShown, setIsShown] =  useState(false);
 
-  
-  function toggle(id) { 
-    setSquares(prevSquares => {
-        return prevSquares.map((square) => {
-          return square.id === id ? {...square, on: !square.on} : square
-        })
-    })
+  function toggleShown(){
+    setIsShown(prevShown => !prevShown);
   }
 
-
-
-  const squareElements = squares.map(square => (
-    <Box on={square.on} id={square.id} key={square.id} toggle={() => toggle(square.id)} />
-  ))
-
-
-
+ const jokeElements = jokesData.map(joke => {
+   return(
+     <Joke 
+        key={joke.id}
+        setup={joke.setup}
+        punchline={joke.punchline}
+     />
+   )
+ })
 
   return (
     <div className="App">
@@ -40,7 +38,7 @@ function App() {
       {/* <PicSum /> */}
       {/* <Connundrum /> */}
       {/* <Card /> */}
-      {squareElements}
+      {jokeElements}
     </div>
   );
 }
