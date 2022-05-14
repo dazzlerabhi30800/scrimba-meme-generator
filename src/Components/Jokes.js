@@ -11,7 +11,9 @@ function Jokes(props) {
         <div>
             {props.setup && <h3>{props.setup}</h3>}
             {isShown && <p>{props.punchline}</p>}
-            <button className='my-2 bg-teal-500 p-2 mb-4' onClick={toggleShown}>Toggle Punchline</button>
+            <button onClick={toggleShown} className='my-2 bg-teal-500 p-2 mb-4'>{isShown ? "Hide" : "Show"}</button>
+            {/* {isShown && <button className='my-2 bg-teal-500 p-2 mb-4' onClick={toggleShown}>Hide punchline</button>} */}
+           {/* {!isShown && <button className='my-2 bg-teal-500 p-2 mb-4' onClick={toggleShown}>Show punchline</button>} */}
             <hr />
         </div>
     )
