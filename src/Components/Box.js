@@ -9,7 +9,7 @@ function Box(props) {
 
     
     return(
-    <div style={styles} onClick={() => props.handleClick(props.id)} className='box' ></div>
+    <div style={styles} onClick={() => props.toggle(props.id)} className='box' ></div>
     )
 }
 

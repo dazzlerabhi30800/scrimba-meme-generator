@@ -16,14 +16,30 @@ function App() {
   const [squares, setSquares] = useState(boxes);
 
   
-  function handleClick(id) {
-    console.log(id);
+  function toggle(id) {
+    setSquares(prevSquare => {
+      const newSquares = [];
+      for(let i = 0; i< prevSquare.length; i++) {
+        const currentSquare = prevSquare[i];
+        if(currentSquare.id === id) {
+          const updateSquare = {
+            ...currentSquare,
+            on: !currentSquare.on
+          }
+          newSquares.push(updateSquare)
+        }
+        else{
+          newSquares.push(currentSquare)
+        }
+      }
+      return newSquares;
+    })
   }
 
 
 
   const squareElements = squares.map(square => (
-    <Box on={square.on} id={square.id} key={square.id} handleClick={handleClick} />
+    <Box on={square.on} id={square.id} key={square.id} toggle={toggle} />
   ))
 
 
