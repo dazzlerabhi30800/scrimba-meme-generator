@@ -5,24 +5,28 @@ import Meme from './Components/Meme'
 import PicSum from './Components/PicSum'
 import Connundrum from './Components/Connundrum'
 import Card from './Components/Card'
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import boxes from './boxes';
 import Box from './Components/Box'
+
 
 
 function App() {
 
   const [squares, setSquares] = useState(boxes);
 
-  const styles = {
-    backgroundColor: "red",
+  
+  function handleClick(id) {
+    console.log(id);
   }
 
 
+
   const squareElements = squares.map(square => (
-    <Box on={square.on} key={square.id} />
+    <Box on={square.on} id={square.id} key={square.id} handleClick={handleClick} />
   ))
- 
+
+
 
 
   return (
@@ -37,3 +41,5 @@ function App() {
   );
 }
 export default App;
+
+

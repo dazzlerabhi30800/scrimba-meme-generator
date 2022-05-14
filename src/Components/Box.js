@@ -1,12 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 function Box(props) {
 
+
     const styles = {
-        border: props.on ? '1px solid black' : '2px solid purple',
+        backgroundColor: props.on ? 'black' : 'red',
     }
+
+    
     return(
-    <div style={styles} className='box' key={props.key}></div>
+    <div style={styles} onClick={() => props.handleClick(props.id)} className='box' ></div>
     )
 }
 
