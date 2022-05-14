@@ -1,0 +1,25 @@
+.header {
+    display : flex;
+    align-items: center;
+    padding : 20px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color : white;
+    height: 65px;
+}
+
+.header > img {
+    cursor : pointer;
+}
+
+.heading {
+    margin-right: auto;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 500;
+}
