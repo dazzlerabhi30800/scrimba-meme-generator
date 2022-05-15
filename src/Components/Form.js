@@ -1,35 +1,50 @@
-import React,{useState} from 'react';
+import React, { useState } from "react";
 
 function Form() {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
 
-    function handleFirstNameChange(event) {
-        setFirstName(event.target.value)
-    }
+  function handleChange(event) {
+    setFormData(prevFormData => {
+       return {
+            ...prevFormData,
+            [event.target.name]: event.target.value
+       } 
+    })
+  } 
 
-    function handleLastNameChange(event) {
-        setLastName(event.target.value);
-    }
 
-    console.log(firstName);
-
-    return(
-        <form className='grid gap-2 w-60'>
-            <input
-                type="text"
-                placeholder='First Name'
-                onChange={handleFirstNameChange}
-                className="mx-2 px-2"
-             />
-             <input
-                type="text"
-                placeholder='Last Name'
-                onChange={handleLastNameChange}
-                className="mx-2 px-2"
-             />
-        </form>
-    )
+  return (
+    <form className="grid gap-2 w-60">
+      <input
+        type="text"
+        placeholder="First Name"
+        onChange={handleChange}
+        className="mx-2 px-2 rounded-md py-2"
+        name="firstName"
+        value={formData.firstName}
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        onChange={handleChange}
+        className="mx-2 px-2 rounded-md py-2"
+        name="lastName"
+        value={formData.lastName}
+      />
+      <input
+        type="email"
+        placeholder="Please enter your email"
+        className="mx-2 px-2 rounded-md py-2"
+        name="email"
+        onChange={handleChange}
+        value={formData.email}
+       />
+    </form>
+  );
 }
 
 export default Form;
