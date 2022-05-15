@@ -21,10 +21,13 @@ function Form() {
     });
   }
 
-  console.log(formData.favColor);
+  function handleSubmit(event){
+    event.preventDefault();
+    console.log(formData);
+  }
 
   return (
-    <form className="grid w-60 gap-2">
+    <form onSubmit={handleSubmit} className="grid w-60 gap-2">
       <input
         type="text"
         placeholder="First Name"
@@ -99,8 +102,10 @@ function Form() {
           <option value="indigo">Indigo</option>
           <option value="blue">Blue</option>
       </select>
+      <button className="bg-teal-500 p-2 text-white">Submit</button>
     </form>
   );
 }
+
 
 export default Form;
