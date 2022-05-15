@@ -7,20 +7,21 @@ function Form() {
     email: "",
     comments: "",
     isFriendly: false,
+    employment: ""
   });
 
   function handleChange(event) {
-    const {name, value, type, checked} = event.target
+    const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [name]: type === "checkbox" ? checked : value
+        [name]: type === "checkbox" ? checked : value,
       };
     });
   }
 
   return (
-    <form className="gap-2">
+    <form className="grid w-60 gap-2">
       <input
         type="text"
         placeholder="First Name"
@@ -60,9 +61,24 @@ function Form() {
         checked={formData.isFriendly}
         className="mx-2"
         name="isFriendly"
-       />
-       <label htmlFor="isFriendly">Are you Friendly ?</label>
-       <br />
+      />
+      <label htmlFor="isFriendly">Are you Friendly ?</label>
+      <br />
+      <br />
+
+      <fieldset>
+        <legend>Current employment status</legend>
+
+        <input type="radio" id="employed" name="employment" value="unemployed" checked={formData.employment === "unemployed"} onChange={handleChange} />
+        <label htmlFor="unemployed">Unemployed</label>
+        <br />
+        <input type="radio" id="part-time" name="employment" value="part-time" checked={formData.employment === "part-time"} onChange={handleChange} />
+        <label htmlFor="part-time">Part-time</label>
+        <br />
+        <input type="radio" id="full-time" name="employment" value="full-time" checked={formData.employment === "full-time"} onChange={handleChange} />
+        <label htmlFor="full-time">Full-time</label>
+        <br />
+      </fieldset>
     </form>
   );
 }
