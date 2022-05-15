@@ -7,7 +7,8 @@ function Form() {
     email: "",
     comments: "",
     isFriendly: false,
-    employment: ""
+    employment: "",
+    favColor: "",
   });
 
   function handleChange(event) {
@@ -19,6 +20,8 @@ function Form() {
       };
     });
   }
+
+  console.log(formData.favColor);
 
   return (
     <form className="grid w-60 gap-2">
@@ -79,6 +82,23 @@ function Form() {
         <label htmlFor="full-time">Full-time</label>
         <br />
       </fieldset>
+      <br />
+      
+      <label htmlFor="favColor">What is your favorite colour?</label>
+      <br />
+      <select
+          name="favColor"
+          id="favColor"
+          value={formData.favColor}
+          onChange={handleChange}
+       >
+          <option value="red">Red</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yello</option>
+          <option value="green">Green</option>
+          <option value="indigo">Indigo</option>
+          <option value="blue">Blue</option>
+      </select>
     </form>
   );
 }
