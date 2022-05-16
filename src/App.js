@@ -13,6 +13,7 @@ import jokesData from "./Components/JokesData";
 import Form from './Components/Form'
 
 
+console.log("Only for checking")
 function App() {
 
   const [squares, setSquares] = useState(boxes);
