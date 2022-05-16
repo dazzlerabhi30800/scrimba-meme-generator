@@ -20,6 +20,8 @@ function App() {
     backgroundColor: "red",
   }
 
+  console.log("I am just writing this to check if my git is working or not!")
+
 
   const squareElements = squares.map(square => (
     <Box on={square.on} key={square.id} />
