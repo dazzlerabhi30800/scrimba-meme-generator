@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from "react";
 
 function Form() {
@@ -112,8 +113,37 @@ function Form() {
 export default Form;
 =======
 import React from 'react';
+=======
+import React, {useState} from 'react';
+>>>>>>> 855fb6f (New windows code)
 
 function Form() {
+
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        comments: "",
+        isFriendly: false,
+        employment: "",
+        favColor: "",
+    })
+
+    function handleChange(event) {
+        const {name, value, type, checked} = event.target;
+        setFormData((prevFormData) => {
+            return{
+                ...prevFormData,
+                [name]: type=== "checkbox" ? checked : value,
+            }
+        })
+    }
+
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(formData);
+    }
 
     return (
         <form onSubmit={handleSubmit} className="grid w-60 gap-2">
