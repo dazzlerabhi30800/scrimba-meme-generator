@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import React, { useState } from "react";
 
 function Form() {
@@ -128,6 +126,8 @@ function Form() {
         employment: "",
         favColor: "",
     })
+
+    console.log("Best in class")
 
     function handleChange(event) {
         const {name, value, type, checked} = event.target;
