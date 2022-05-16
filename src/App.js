@@ -13,6 +13,7 @@ import jokesData from "./Components/JokesData";
 import Form from './Components/Form'
 
 function App() {
+  console.log('just checking if this is working or not!')
 
   const [squares, setSquares] = useState(boxes);
 
