@@ -11,9 +11,11 @@ import Box from "./Components/Box";
 import Joke from "./Components/Jokes";
 import jokesData from "./Components/JokesData";
 import Form from './Components/Form'
+import SignUpForm from './Components/SignUpForm'
+
+
 
 function App() {
-  console.log('just checking if this is working or not!')
 
   const [squares, setSquares] = useState(boxes);
 
@@ -21,7 +23,6 @@ function App() {
     backgroundColor: "red",
   }
 
-  console.log("I am just writing this to check if my git is working or not!")
 
 
   const squareElements = squares.map(square => (
@@ -35,8 +36,9 @@ function App() {
       {/* <PicSum /> */}
       {/* <Connundrum /> */}
       {/* <Card /> */}
-      <Form />
+      <SignUpForm />
     </div>
-  );
+  ); 
 }
+
 export default App;
