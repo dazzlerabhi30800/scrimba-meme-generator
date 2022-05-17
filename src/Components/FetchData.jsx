@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 function FetchData() {
-    const [starWarsData, setStarsWarsData] = useState({})
-    const [count, setCount] = useState(0)
+    const [starWarsData, setStarWarsData] = useState({})
+    const [count, setCount] = useState(1)
 
     console.log("Component rendered")
 
@@ -11,14 +11,17 @@ function FetchData() {
     //         .then(data => console.log(data))
 
    useEffect(() => {
-       console.log("Effect function run")
+       console.log("Effect Ran!")
+       fetch(`http://swapi.dev/api/people/${count}`)
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
    }, [count]) 
 
     return(
         <div>
-            <pre>{JSON.stringify(starWarsData,null,2)}</pre>
             <h2>The count is {count}</h2>
             <button className='bg-green-500 p-1 px-6 my-2 text-white' onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+            <pre>{JSON.stringify(starWarsData,null,2)}</pre>
         </div>
     )
 }

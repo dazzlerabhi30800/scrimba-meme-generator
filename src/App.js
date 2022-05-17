@@ -11,9 +11,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Header /> */}
-      {/* <Meme /> */}
-      <FetchData />
+      <Header />
+      <Meme />
+      {/* <FetchData /> */}
     </div>
   ); 
 }
