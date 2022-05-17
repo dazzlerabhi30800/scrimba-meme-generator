@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction : column;
     justify-content: initial;
-    align-items: initial;
+    align-items: center;
     /* background: red; */
     padding : 1rem 0rem;
 }
