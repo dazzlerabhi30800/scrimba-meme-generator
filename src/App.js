@@ -31,12 +31,12 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Header /> */}
-      {/* <Meme /> */}
+      <Header />
+      <Meme />
       {/* <PicSum /> */}
       {/* <Connundrum /> */}
       {/* <Card /> */}
-      <SignUpForm />
+      {/* <SignUpForm /> */}
     </div>
   ); 
 }
