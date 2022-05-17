@@ -18,11 +18,11 @@ function App() {
     
   return (
     <div className="App">
-      {/* <Header /> */}
-      {/* <Meme /> */}
+      <Header />
+      <Meme />
       {/* <FetchData /> */}
-      <button onClick={handleClick}>Toggle Window Tracker</button>
-      {show && <WindowTracker />}
+      {/* <button onClick={handleClick}>Toggle Window Tracker</button> */}
+      {/* {show && <WindowTracker />} */}
     </div>
   ); 
 }
